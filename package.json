@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@blaze/atoms": "^13.1.0"
+    "@blaze/atoms": "^13.1.0",
+    "normalize.css": "^8.0.1"
   }
 }

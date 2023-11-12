@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css">
     <style>
 
@@ -125,6 +125,32 @@
             padding-bottom: 10rem;
         }
 
+        .player_pick_container {
+            flex: 1;
+        }
+
+        .player_right_pick {
+            flex: 1;
+        }
+
+        @keyframes fontAnimation {
+            0% {
+                font-size: medium;
+            }
+
+            50% {
+                font-size: large;
+            }
+
+            100% {
+                font-size: medium;
+            }
+        }
+
+        .animate {
+        animation: fontAnimation 1s ease-in-out infinite;
+        }
+
     </style>
 </head>
 <body>
@@ -143,17 +169,17 @@
     <div class="score_alignment">
         <div class="o-container o-container--medium player_left_score_title xm_o">YOUR SCORE</div>
         <div class="o-container o-container--medium player_left_score_circles xm_o">
-            <span class="player_1_score_circle_1"></span>
-            <span class="player_1_score_circle_2"></span>
-            <span class="player_1_score_circle_3"></span>
+            <span class="player_1_score_circle_1 circles"></span>
+            <span class="player_1_score_circle_2 circles"></span>
+            <span class="player_1_score_circle_3 circles"></span>
         </div>
     </div>
     <div class="score_alignment">
         <div class="o-container o-container--medium player_right_score_title xm_o">OPPONENT'S SCORE</div>
         <div class="o-container o-container--medium player_right_score_circles xm_o">
-            <span class="player_2_score_circle_1"></span>
-            <span class="player_2_score_circle_2"></span>
-            <span class="player_2_score_circle_3"></span>        
+            <span class="player_2_score_circle_1 circles"></span>
+            <span class="player_2_score_circle_2 circles"></span>
+            <span class="player_2_score_circle_3 circles"></span>        
         </div>
     </div>
 </div>
@@ -195,7 +221,9 @@
 </div>
 
 <div class="o-container o-container--super round_container" id="status">
-    <h1 class="c-heading u-medium player_left_pick">PLAYER PICK</h1>
+    <div class="player_pick_container">
+        <h1 class="c-heading u-medium player_left_pick">PLAYER PICK</h1>
+    </div>
     <h1 class="c-heading u-medium player_right_pick">COMPUTER PICK</h1>
 </div>
 
@@ -203,9 +231,9 @@
 
 
 <script type="module" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"></script>
-<script src="node_modules/@blaze/atoms/dist/blaze-atoms.js"></script>
-<script src="index.js"></script>
+<!-- <script nomodule="" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"></script> -->
+<!-- <script src="node_modules/@blaze/atoms/dist/blaze-atoms.js"></script> -->
 <script type="module" src="index.js"></script>
+<script type="module" src="functions.js"></script>
 </body>
 </html>
