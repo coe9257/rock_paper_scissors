@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css">
+    <style>
+
+        body {
+            background-color:cornflowerblue;
+        }
+
+        .nav {
+            background-color: black;
+            width: 100%;
+            height: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+        }
+
+        .page_title {
+            color: white;
+        }
+
+        .title {
+            color: white;
+        }
+
+        .c-heading {
+            text-align: center;
+        }
+
+        .button_container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 1rem;
+        }
+
+        #round_flex_01 {
+            justify-content: space-around;
+        }
+
+        .player_1_score_circle_1,
+        .player_1_score_circle_2,
+        .player_1_score_circle_3,
+        .player_2_score_circle_1,
+        .player_2_score_circle_2,
+        .player_2_score_circle_3
+        {
+            height: 25px;
+            width: 25px;
+            margin-right: 1rem;
+            background-color: cornflowerblue;
+            border-radius: 50%;
+            border-style: solid;
+            border-color: black;
+            display: inline-block;
+        }
+
+        .xm_o {
+            color: black;
+            font-size: 1.75rem;
+        }
+
+        .round_title {
+            margin-top: 5rem;
+        }
+
+        .score_alignment {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .score_alignment .xm_o:first-child {
+            margin-bottom: 1rem;
+        }
+
+        .round_container {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 5rem;
+        }
+
+        .o-container--super > .o-container--medium {
+            height: 10rem;
+            width: 20rem;
+        }
+
+        .image_containers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .xr {
+            /* object-fit: cover; */
+            height: 10rem;
+            width: 10rem;
+            margin: 2rem;
+            margin-bottom: 0;
+        }
+
+        .picture_flex {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .picture_flex > a {
+            text-align: center;
+            font-size: .5rem;
+        }
+
+        #status {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 10rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="o-container o-container--super nav">
+    <h1 class="c-heading u-super u-center-block page_title">ROCK PAPER SCISSORS</h1>
+</div>
+
+<h1 class="c-heading u-super u-center-block round_title">START ROUND</h1>
+<div class="button_container">
+    <button type="button" class="button c-button u-centered">START</button>
+</div>
+
+
+<div class="o-container o-container--super round_container" id="round_flex_01">
+    <div class="score_alignment">
+        <div class="o-container o-container--medium player_left_score_title xm_o">YOUR SCORE</div>
+        <div class="o-container o-container--medium player_left_score_circles xm_o">
+            <span class="player_1_score_circle_1"></span>
+            <span class="player_1_score_circle_2"></span>
+            <span class="player_1_score_circle_3"></span>
+        </div>
+    </div>
+    <div class="score_alignment">
+        <div class="o-container o-container--medium player_right_score_title xm_o">OPPONENT'S SCORE</div>
+        <div class="o-container o-container--medium player_right_score_circles xm_o">
+            <span class="player_2_score_circle_1"></span>
+            <span class="player_2_score_circle_2"></span>
+            <span class="player_2_score_circle_3"></span>        
+        </div>
+    </div>
+</div>
+
+<div class="o-container o-container--super round_container">
+    <div class="o-container o-container--xlarge player_left_pick_R_P_C image_containers">
+        <div class="picture_flex">
+            <image src="./rock.png" class="xr player_left_rock" alt="rock"></image>
+            <a href="https://www.flaticon.com/free-icons/rock" title="rock icons">Rock icons created by Icongeek26 - Flaticon</a>
+        </div>
+
+        <div class="picture_flex">
+            <image src="./paper.png" class="xr player_left_paper" alt="paper"></image>
+            <a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by riajulislam - Flaticon</a>
+        </div>
+
+        <div class="picture_flex">
+            <image src="./scissors.png" class="xr player_left_scissors" alt="scissors"></image>
+            <a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Freepik - Flaticon</a>
+        </div>
+    </div>
+
+    <div class="o-container o-container--xlarge player_right_pick_R_P_C image_containers">
+        <div class="picture_flex">
+            <image src="./rock.png" alt="rock" class="xr player_right_rock"></image>
+            <a href="https://www.flaticon.com/free-icons/rock" title="rock icons">Rock icons created by Icongeek26 - Flaticon</a>
+        </div>
+
+        <div class="picture_flex">
+            <image src="./paper.png" class="xr player_right_paper" alt="paper"></image>
+            <a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by riajulislam - Flaticon</a>
+        </div>
+
+        <div class="picture_flex">
+            <image src="./scissors.png" class="xr player_right_scissors" alt="scissors"></image>
+            <a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Freepik - Flaticon</a>
+        </div>
+    </div>
+</div>
+
+<div class="o-container o-container--super round_container" id="status">
+    <h1 class="c-heading u-medium player_left_pick">PLAYER PICK</h1>
+    <h1 class="c-heading u-medium player_right_pick">COMPUTER PICK</h1>
+</div>
+
+
+
+
+<script type="module" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"></script>
+<script src="node_modules/@blaze/atoms/dist/blaze-atoms.js"></script>
+<script src="index.js"></script>
+<script type="module" src="index.js"></script>
+</body>
+</html>
